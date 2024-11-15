@@ -11,4 +11,4 @@ RUN ls -ltra
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set the command to run your Python script
-ENTRYPOINT ["python", "add_trace_id.py"]
+ENTRYPOINT ["python", "/usr/src/app/add_trace_id.py"]
