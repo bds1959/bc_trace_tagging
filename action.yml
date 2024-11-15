@@ -7,5 +7,5 @@ inputs:
     default: '.'
 
 runs:
-  using: 'python3'
-  main: 'add_trace_id.py'
+  using: 'docker'
+  image: 'Dockerfile'  # Specifies using the Dockerfile in the repository
