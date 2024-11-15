@@ -1,0 +1,11 @@
+name: 'IaC tag and trace'
+description: 'Adds a unique banyancloud_trace_id to Terraform resource tags.'
+inputs:
+  directory:
+    description: 'Directory containing the .tf files to update'
+    required: false
+    default: '.'
+
+runs:
+  using: 'python3'
+  main: 'add_trace_id.py'
