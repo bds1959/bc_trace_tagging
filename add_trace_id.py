@@ -7,7 +7,11 @@ def generate_trace_id():
     return str(uuid.uuid4())
 
 def merge_tags(existing_tags, trace_id):
-    """Merge existing tags with banyancloud_trace_id."""
+    """Merge existing tags with banyancloud_trace_id, ensuring no duplicates."""
+    # Check if banyancloud_trace_id already exists in the existing tags
+    if 'banyancloud_trace_id' in existing_tags:
+        return existing_tags  # Return existing tags if banyancloud_trace_id already exists
+    # Add banyancloud_trace_id to existing tags if not already present
     return f"merge({existing_tags.strip()}, {{ banyancloud_trace_id = \"{trace_id}\" }})"
 
 def add_trace_id_to_resource(content):
